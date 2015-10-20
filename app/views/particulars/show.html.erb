@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Placa:</strong>
+  <%= @particular.placa %>
+</p>
+
+<p>
+  <strong>Tenencia:</strong>
+  <%= @particular.tenencia %>
+</p>
+
+<p>
+  <strong>Infracciones:</strong>
+  <%= @particular.infracciones %>
+</p>
+
+<p>
+  <strong>Verificaciones:</strong>
+  <%= @particular.verificaciones %>
+</p>
+
+<%= link_to 'Edit', edit_particular_path(@particular) %> |
+<%= link_to 'Back', particulars_path %>

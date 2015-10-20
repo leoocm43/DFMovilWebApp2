@@ -1,0 +1,38 @@
+<h1>Particulares</h1>
+<h3>Ingresa la matricula de la unidad particular(auto,taxi,microbús,motocicleta)</h3>
+<div class="large-9 small-10 columns">
+  <input type="text" placeholder="Ingresa la matrícula">
+</div>
+<div class="large-3 small-2 columns">
+  <a href="#" class="alert button expand">Search</a>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Placa</th>
+      <th>Tenencia</th>
+      <th>Infracciones</th>
+      <th>Verificaciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @particulars.each do |particular| %>
+      <tr>
+        <td><%= particular.placa %></td>
+        <td><%= particular.tenencia %></td>
+        <td><%= particular.infracciones %></td>
+        <td><%= particular.verificaciones %></td>
+        <td><%= link_to 'Show', particular %></td>
+        <td><%= link_to 'Edit', edit_particular_path(particular) %></td>
+        <td><%= link_to 'Destroy', particular, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Particular', new_particular_path %>
