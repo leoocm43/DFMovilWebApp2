@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :usuarios
+  get 'usuario/new'
+
   resources :transportes
   resources :sitios
   resources :particulars
