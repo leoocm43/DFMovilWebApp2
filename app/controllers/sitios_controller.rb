@@ -1,5 +1,6 @@
 class SitiosController < ApplicationController
   before_action :set_sitio, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /sitios
   # GET /sitios.json

@@ -54,8 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'gmaps4rails'
 gem 'geocoder'
-<<<<<<< HEAD
+#<<<<<<< HEAD
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
-=======
->>>>>>> 1b22db657285f4dc2c0c6ab117fcdbafe7218304
+#=======
+#>>>>>>> 1b22db657285f4dc2c0c6ab117fcdbafe7218304

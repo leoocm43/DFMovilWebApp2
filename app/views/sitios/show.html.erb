@@ -22,22 +22,21 @@
 </p>
 
 <%= link_to 'Edit', edit_sitio_path(@sitio), class:'button' %> |
-<%= link_to 'Back', sitios_path,class:'button' %>
+<%= link_to 'Atrás', sitios_path,class:'button' %>
+
+
+<div style='width: 800px;'>
+    <div id="multi_markers" style='width: 800px; height: 400px;'></div>
+  </div>
 
 <script type="text/javascript">
   var handler = Gmaps.build('Google');
-handler.buildMap({ internal: {id: 'geolocation'} }, function(){
-  if(navigator.geolocation)
-    navigator.geolocation.getCurrentPosition(displayOnMap);
+handler.buildMap({ internal: {id: 'multi_markers'}}, function(){
+  var markers = handler.addMarkers([
+    {lat: <%=@sitio.latitude%>, lng: <%=@sitio.longitude%>}
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
 });
-
-function displayOnMap(position){
-  var marker = handler.addMarker({
-    lat: position.coords.sitio.latitude,
-    lng: position.coords.sitio.longitude
-  });
-  handler.map.centerOn(marker);
-};
 </script>
-
 

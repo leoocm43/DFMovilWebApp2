@@ -1,5 +1,6 @@
 class ParticularsController < ApplicationController
   before_action :set_particular, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /particulars
   # GET /particulars.json

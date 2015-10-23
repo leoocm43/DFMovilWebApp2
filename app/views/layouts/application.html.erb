@@ -26,6 +26,10 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li class="active"><%= link_to 'Registrarse', new_user_registration_path%></li>
+          <li class="active"><%= link_to 'Iniciar sesión', new_user_session_path%></li>
+          <% if user_signed_in?%>
+            <li class="active"><%= link_to 'Cerrar sesión', destroy_user_session_path, :method => :delete%></li>
+          <% end %>
           <!--<li class="has-dropdown">
             <a href="#">Right Button Dropdown</a>
             <ul class="dropdown">
@@ -37,7 +41,8 @@
 
         <!-- Left Nav Section -->
         <ul class="left">
-          <li><a href="#">Inicio</a></li>
+          <!--<li><a href="#">Inicio</a></li>-->
+          <li><%= link_to 'Inicio', root_path %></li>
           
           <li><%= link_to 'Particulares', particulars_path %></li>
           <!--<li><a href="#">Sitios de Taxi</a></li>-->
