@@ -42,6 +42,7 @@ gem 'coffee-script-source', '1.8.0'
 gem 'node', '~> 0.0.2'
 gem 'foundation-rails'
 
+gem 'bson', '~> 3.0.0'
 gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
 group :development do
