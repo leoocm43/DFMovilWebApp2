@@ -40,7 +40,7 @@ group :development, :test do
 end
 gem 'coffee-script-source', '1.8.0'
 gem 'node', '~> 0.0.2'
- gem 'foundation-rails'
+gem 'foundation-rails'
 
 gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
@@ -54,8 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'gmaps4rails'
 gem 'geocoder'
-#<<<<<<< HEAD
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
-#=======
-#>>>>>>> 1b22db657285f4dc2c0c6ab117fcdbafe7218304
