@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "DFMovil" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">DF Movil</a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><%= link_to 'Registrarse', new_user_registration_path%></li>
+          <li class="active"><%= link_to 'Iniciar sesión', new_user_session_path%></li>
+          <% if user_signed_in?%>
+            <li class="active"><%= link_to 'Cerrar sesión', destroy_user_session_path, :method => :delete%></li>
+          <% end %>
+          <!--<li class="has-dropdown">
+            <a href="#">Right Button Dropdown</a>
+            <ul class="dropdown">
+              <li><a href="#">First link in dropdown</a></li>
+              <li class="active"><a href="#">Active link in dropdown</a></li>-->
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <!--<li><a href="#">Inicio</a></li>-->
+          <li><%= link_to 'Inicio', root_path %></li>
+          
+          <li><%= link_to 'Particulares', particulars_path %></li>
+          <!--<li><a href="#">Sitios de Taxi</a></li>-->
+          <li><%= link_to 'Sitios de Taxis', sitios_path %></li>
+         <!-- <li><a href="#">Servicios</a></li>-->
+          <li><%= link_to 'Servicios de Transporte Público', transportes_path %></li>
+        </ul>
+      </section>
+  </nav>
+
+
+    <div class="row">
+      
+            <%= yield %>
+      
+    </div>
+
+  </body>
+</html>
